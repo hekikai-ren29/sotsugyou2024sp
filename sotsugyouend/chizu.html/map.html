@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>熊本県八代市中心部最新駐車場</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ここに追加 -->
+  <style>
+    /* スムーズなスクロールのアニメーションを追加 */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* ボタンのスタイル */
+    .back-to-top {
+      display: none; /* 初期状態では非表示 */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .back-to-top:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <a href="top.html" class="back-to-top">TOPへ戻る</a><!-- 修正済みのボタン -->
+
+
+  <h1 id="top">八代市中心部駐車場最新版</h1>
+  <!-- Google マップの埋め込みコード -->
+  <iframe src="https://www.google.com/maps/d/embed?mid=1y_iZyAlnJe9zyzMmAjnT4gZfXbmyOko&ehbc=2E312F" width="640" height="480"></iframe>
+  <!-- ピンをクリックしたときのリンク -->
+  
+
+  <script>
+    // ボタンを表示する条件を設定
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.back-to-top').style.display = "block"; // スクロールが20px以上で表示
+      } else {
+        document.querySelector('.back-to-top').style.display = "none"; // それ以外は非表示
+      }
+    }
+
+    // ボタンをクリックしたときの処理
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      // トップへスムーズスクロール
+      document.querySelector('html').scrollIntoView({ behavior: 'smooth' });
+    });
+ 
+  </script>
+</body>
+</html>
+
